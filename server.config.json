@@ -1,0 +1,11 @@
+{
+	"db":
+	{
+		"connection":"mongodb://localhost:27017/crm",
+		
+		"contactsCollection" : "contacts",
+		"customersCollection" : "customers",
+
+		"contactsLogCollection" : "contacts.log"
+	}
+}

@@ -1,0 +1,42 @@
+<section class="container" ng-model="contact">
+	<script>
+		fnUpdateMenu("menuSettings");
+	</script>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4>
+				<strong>
+					<span class="glyphicon glyphicon-wrench pull-right"></span>Settings
+				</strong>
+			</h4>
+		</div>
+		<div class="panel-body">
+			<ui class="list-group">
+				<il class="list-group-item">
+					<b>connection:</b> MongoDB
+				</il>
+
+				<il class="list-group-item">
+					<b>Collections</b>
+					<ui class="list-group">
+						<il class="list-group-item">
+							<b>Contacts:</b> {{settings.db.contactsCollection}}					
+						</il>
+
+						<il class="list-group-item">
+							<b>Customers:</b> {{settings.db.customersCollection}}					
+						</il>
+
+						<il class="list-group-item">
+							<b>Log:</b> {{settings.db.contactsLogCollection}}					
+						</il>
+						
+					</ui>
+
+				</il>
+
+				
+			</ui>
+		</div>
+	</div>
+</section>

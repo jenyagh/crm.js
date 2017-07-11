@@ -1,0 +1,67 @@
+<section class="container" ng-model="contact">
+	<script>
+		fnUpdateMenu("menuDetails");
+	</script>	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4>
+				<big><strong>
+					<span class="glyphicon glyphicon-option-vertical"></span>
+					{{contact.fname + " " + contact.lname}}
+				</strong></big>
+
+				<div class="btn-group pull-right" style="margin-top:-5px">
+					<a class="btn btn-primary btn-md" ng-href="#!/contacts/{{contact.customer}}"  >
+						<span class="glyphicon glyphicon-chevron-left left"></span> Back
+					</a>				
+					<a class="btn btn-primary btn-md" ng-click="$update()">
+						<span class="glyphicon glyphicon-edit left"></span> Edit 
+					</a>					
+					<a class="btn btn-danger btn-md" ng-click="$delete()">
+						<span class="glyphicon glyphicon-remove left"></span> Delete 
+					</a>						
+
+				</div>	
+			</h4>
+		</div>
+		<div class="panel-body">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="firstName">First Name:</label>
+					<div class="col-sm-8">
+						<input readonly type="text" class="form-control" id="firstName" placeholder="First Name" ng-model="contact.fname" style="background-color: white">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="lastName">Last Name:</label>
+					<div class="col-sm-8"> 
+						<input readonly type="text" class="form-control" id="lastName" placeholder="Last Name" ng-model="contact.lname" style="background-color: white">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="eMail">
+						e-Mail:
+					</label>
+					<div class="col-sm-8">
+						<input readonly type="email" class="form-control" id="eMail" placeholder="eMail" ng-model="contact.email" style="background-color: white">
+					</div>
+				</div>				
+				<div class="form-group" ng-show="contact.phones">
+					<label class="control-label col-sm-2" for="">
+						<span class="glyphicon glyphicon-phone-alt left"></span> Phone:
+					</label>
+					<div class="col-sm-8 "> 
+						<ui class="list-group">
+							<il class="list-group-item" ng-repeat="phone in contact.phones">
+								{{phone.type}}: {{phone.number}}					
+							</il>
+						</ui>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+    
+	<div class="" style="display:none">{{contact._id}}</div>
+</section>
+    

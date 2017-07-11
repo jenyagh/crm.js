@@ -1,0 +1,76 @@
+<section class="container" ng-model="events">
+	<script>
+		fnUpdateMenu("menuEvents");
+	</script>
+	<main>
+		<h1 class="page-header" onclick="">Events (Log)</h1>
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+				<div class="progress yellow">
+					<span class="progress-left">
+						<span class="progress-bar"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar"></span>
+					</span>
+					<div class="progress-value">75%</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="progress green">
+					<span class="progress-left">
+						<span class="progress-bar"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar"></span>
+					</span>
+					<div class="progress-value">50%</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-sm-6">
+				<div class="progress pink">
+					<span class="progress-left">
+						<span class="progress-bar"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar"></span>
+					</span>
+					<div class="progress-value">60%</div>
+				</div>
+			</div>
+
+		</div>
+	</main>
+
+		<table class="table table-striped table-contacts"> <!--ng-show="query">-->
+
+			<thead>	
+				<tr>
+					<th style="width:45px">#</th>
+					<th>Event</th>
+					<th>Date/Time</th>
+					<th class="text-right">...</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in events"> 
+					<td><b>{{$index + 1}}</b> </td>
+					<td>{{item.event}}</td>
+					<td>{{item.date}}</td>
+					<td class="text-right">
+						<a  class="btn btn-link btn-xs" ng-href="/#!/details/{{item.contactId}}" style="display:{{$cssDisplay(item.event)}}">
+							<span class="glyphicon glyphicon-list-alt left"/>Details
+						</a>							
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="4">
+					</th>
+				</tr>
+			</tfoot>
+		</table>
+
+</section>
